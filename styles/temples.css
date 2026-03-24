@@ -60,17 +60,17 @@ h1 {
 }
 
 figure {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 300px;
+  margin: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
+figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 figcaption {
@@ -87,4 +87,14 @@ footer {
     text-align: center;
     padding: 1.5rem;
     font-size: 0.9rem;
+}
+
+#menu-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+}
+
+.hidden {
+  display: none;
 }
