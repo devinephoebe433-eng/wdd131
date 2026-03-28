@@ -2,19 +2,25 @@
 :root {
     --brand-color: #2d5a27;
     --accent-color: #e67e22;
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.3);
     --text-main: #1a1a1a;
-    --text-light: #555;
-    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --text-light: #555555;
 
-    /* ✅ ADDED (to remove named colors) */
+    /* Colors in HEX format */
     --white: #ffffff;
     --dark: #222222;
     --light-bg: #f0f2f5;
     --card-bg: #ffffff;
     --footer-text: #aaaaaa;
+
+    /* Alpha-based HEX colors */
+    --glass-bg: #ffffffd9;      /* rgba(255,255,255,0.85) */
+    --glass-border: #ffffff4d;  /* rgba(255,255,255,0.3) */
+    --shadow: 0 8px 32px 0 #1f26851a;
+
+    /* Gradient */
+    --gradient-end: #eef2f3;
+
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Global Smooth Reset */
@@ -40,7 +46,7 @@ header {
 }
 
 header h1 {
-    color: var(--white); /* ✅ fixed */
+    color: var(--white);
     font-size: clamp(1.2rem, 5vw, 1.8rem);
     letter-spacing: 1px;
 }
@@ -51,7 +57,7 @@ header h1 {
 }
 
 #nav-menu a {
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffffe6;
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
@@ -101,7 +107,7 @@ main {
 
 /* Card */
 .card {
-    background: var(--card-bg); /* ✅ fixed */
+    background: var(--card-bg);
     border-radius: 15px;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -114,7 +120,7 @@ main {
 
 /* Weather */
 .weather {
-    background: linear-gradient(135deg, var(--white) 0%, #eef2f3 100%);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gradient-end) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,7 +138,7 @@ main {
     main {
         grid-template-columns: 2fr 1fr;
     }
-    
+
     .weather-heading::after {
         content: " ⛅";
         font-size: 1.5rem;
@@ -172,13 +178,13 @@ main {
     padding: 15px;
     font-weight: 700;
     text-align: center;
-    background: var(--card-bg); /* ✅ fixed */
+    background: var(--card-bg);
 }
 
 /* Footer */
 footer {
-    background: var(--dark); /* ✅ fixed */
-    color: var(--footer-text); /* ✅ fixed */
+    background: var(--dark);
+    color: var(--footer-text);
     text-align: center;
     padding: 3rem 1rem;
     margin-top: 50px;
@@ -191,8 +197,8 @@ footer span {
 /* Menu Button */
 #menu-btn {
     background: none;
-    border: 1px solid var(--white); /* ✅ fixed */
-    color: var(--white); /* ✅ fixed */
+    border: 1px solid var(--white);
+    color: var(--white);
     font-size: 1.5rem;
     padding: 5px 10px;
     cursor: pointer;
@@ -200,5 +206,7 @@ footer span {
 }
 
 @media (min-width: 768px) {
-    #menu-btn { display: none; }
+    #menu-btn {
+        display: none;
+    }
 }
