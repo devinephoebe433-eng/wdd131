@@ -51,7 +51,6 @@ section {
     margin-top: 10px;
 }
 
-/* Swatch Classes - REPLACES INLINE STYLES */
 .swatch {
     width: 120px;
     height: 60px;
@@ -63,21 +62,9 @@ section {
     font-weight: bold;
 }
 
-.berry {
-    background-color: var(--berry-red);
-    color: var(--white);
-}
-
-.cream {
-    background-color: var(--bg-cream);
-    color: var(--charcoal-text);
-    border: 1px solid #ccc;
-}
-
-.sand {
-    background-color: var(--sand-tan);
-    color: var(--charcoal-text);
-}
+.berry { background-color: var(--berry-red); color: var(--white); }
+.cream { background-color: var(--bg-cream); color: var(--charcoal-text); border: 1px solid #ccc; }
+.sand { background-color: var(--sand-tan); color: var(--charcoal-text); }
 
 .wireframe-preview {
     display: grid;
@@ -99,7 +86,7 @@ section {
 }
 
 @media (max-width: 600px) {
-    .wireframe-preview {
-        grid-template-columns: 1fr;
+    .wireframe-preview { 
+        grid-template-columns: 1fr; 
     }
 }
