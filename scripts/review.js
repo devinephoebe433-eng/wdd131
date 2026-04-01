@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>User:</strong> ${username || "Anonymous"}</p>
     `;
 
-    // show count
     const count = localStorage.getItem("reviewCount");
     document.getElementById("count").textContent = count;
 

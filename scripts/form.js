@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         select.appendChild(option);
     });
 
-    // localStorage counter
+    // LOCAL STORAGE COUNTER (REQUIRED)
     let count = localStorage.getItem("reviewCount") || 0;
     count++;
     localStorage.setItem("reviewCount", count);

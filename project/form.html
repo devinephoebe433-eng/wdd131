@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Product Review Form</title>
-    <meta name="description" content="Submit your product review">
+
+    <meta name="description"
+        content="Submit a detailed product review including rating, installation date, features, and feedback to help improve product quality and user experience.">
+
+    <meta name="author" content="Devine Phoebe">
 
     <link rel="stylesheet" href="styles/form.css">
     <script defer src="scripts/form.js"></script>
@@ -21,42 +26,39 @@
 
         <form method="get" action="review.html">
 
-            <!-- Product Name -->
-            <label for="product">Product Name</label>
+            <!-- PRODUCT -->
+            <label for="product">Product Name <span class="required">*</span></label>
             <select id="product" name="product" required>
                 <option value="" disabled selected>Select a Product ...</option>
             </select>
 
-            <!-- Overall Rating -->
+            <!-- RATING -->
             <fieldset>
-                <legend>Overall Rating</legend>
+                <legend>Overall Rating <span class="required">*</span></legend>
 
                 <input type="radio" id="r1" name="rating" value="1" required>
                 <label for="r1">☆</label>
 
-                <input type="radio" id="r2" name="rating" value="2">
+                <input type="radio" id="r2" name="rating" value="2" required>
                 <label for="r2">☆☆</label>
 
-                <input type="radio" id="r3" name="rating" value="3">
+                <input type="radio" id="r3" name="rating" value="3" required>
                 <label for="r3">☆☆☆</label>
 
-                <input type="radio" id="r4" name="rating" value="4">
+                <input type="radio" id="r4" name="rating" value="4" required>
                 <label for="r4">☆☆☆☆</label>
 
-                <input type="radio" id="r5" name="rating" value="5">
+                <input type="radio" id="r5" name="rating" value="5" required>
                 <label for="r5">☆☆☆☆☆</label>
-
             </fieldset>
 
-            <!-- Date -->
-            <label for="date">Date of Installation</label>
+            <!-- DATE -->
+            <label for="date">Date of Installation <span class="required">*</span></label>
             <input type="date" id="date" name="date" required>
 
-            <!-- Features -->
+            <!-- FEATURES (4 CHECKBOXES REQUIRED) -->
             <fieldset>
                 <legend>Useful Features</legend>
-
-
 
                 <input type="checkbox" id="f1" name="features" value="Durability">
                 <label for="f1">Durability</label>
@@ -67,17 +69,19 @@
                 <input type="checkbox" id="f3" name="features" value="Performance">
                 <label for="f3">Performance</label>
 
+                <input type="checkbox" id="f4" name="features" value="Battery">
+                <label for="f4">Battery</label>
             </fieldset>
 
-            <!-- Review -->
+            <!-- REVIEW -->
             <label for="review">Written Review</label>
             <textarea id="review" name="review"></textarea>
 
-            <!-- Username -->
+            <!-- USER NAME -->
             <label for="username">User Name</label>
             <input type="text" id="username" name="username">
 
-            <!-- Submit -->
+            <!-- SUBMIT -->
             <input type="submit" value="Submit Review">
 
         </form>

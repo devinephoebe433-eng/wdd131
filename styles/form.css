@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     background: var(--bg-cream);
     color: var(--charcoal-text);
     margin: 0;
@@ -35,11 +35,6 @@ form {
 
 input, select, textarea {
     padding: 8px;
-    border: 1px solid #ccc;
-}
-
-input:focus, select:focus, textarea:focus {
-    border: 2px solid var(--berry-red);
 }
 
 fieldset {
@@ -51,7 +46,9 @@ fieldset {
     color: var(--berry-red);
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
+/* MEDIA QUERY (REQUIRED) */
+@media (min-width: 600px) {
+    form {
+        max-width: 700px;
+    }
 }
