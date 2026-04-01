@@ -1,0 +1,57 @@
+:root {
+    --bg-cream: #F4EFE6;
+    --berry-red: #A63D56;
+    --sand-tan: #D9D1C1;
+    --charcoal-text: #2D2D2D;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg-cream);
+    color: var(--charcoal-text);
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background: var(--berry-red);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 4px 4px 0 var(--sand-tan);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 2px solid var(--berry-red);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.required {
+    color: var(--berry-red);
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}

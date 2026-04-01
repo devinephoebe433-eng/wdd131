@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <meta name="description" content="Submit your product review">
+
+    <link rel="stylesheet" href="styles/form.css">
+    <script defer src="scripts/form.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Product Review Form</h1>
+    </header>
+
+    <main>
+
+        <form method="get" action="review.html">
+
+            <!-- Product Name -->
+            <label for="product">Product Name</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
+
+            <!-- Overall Rating -->
+            <fieldset>
+                <legend>Overall Rating</legend>
+
+                <input type="radio" id="r1" name="rating" value="1" required>
+                <label for="r1">☆</label>
+
+                <input type="radio" id="r2" name="rating" value="2">
+                <label for="r2">☆☆</label>
+
+                <input type="radio" id="r3" name="rating" value="3">
+                <label for="r3">☆☆☆</label>
+
+                <input type="radio" id="r4" name="rating" value="4">
+                <label for="r4">☆☆☆☆</label>
+
+                <input type="radio" id="r5" name="rating" value="5">
+                <label for="r5">☆☆☆☆☆</label>
+
+            </fieldset>
+
+            <!-- Date -->
+            <label for="date">Date of Installation</label>
+            <input type="date" id="date" name="date" required>
+
+            <!-- Features -->
+            <fieldset>
+                <legend>Useful Features</legend>
+
+
+
+                <input type="checkbox" id="f1" name="features" value="Durability">
+                <label for="f1">Durability</label>
+
+                <input type="checkbox" id="f2" name="features" value="Design">
+                <label for="f2">Design</label>
+
+                <input type="checkbox" id="f3" name="features" value="Performance">
+                <label for="f3">Performance</label>
+
+            </fieldset>
+
+            <!-- Review -->
+            <label for="review">Written Review</label>
+            <textarea id="review" name="review"></textarea>
+
+            <!-- Username -->
+            <label for="username">User Name</label>
+            <input type="text" id="username" name="username">
+
+            <!-- Submit -->
+            <input type="submit" value="Submit Review">
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Devine Phoebe | BYU-Idaho</p>
+    </footer>
+
+</body>
+
+</html>
