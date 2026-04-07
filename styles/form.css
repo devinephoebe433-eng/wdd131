@@ -1,54 +1,46 @@
-:root {
-    --bg-cream: #F4EFE6;
-    --berry-red: #A63D56;
-    --sand-tan: #D9D1C1;
-    --charcoal-text: #2D2D2D;
-    --white: #FFFFFF;
-}
-
 body {
     font-family: Arial, sans-serif;
-    background: var(--bg-cream);
-    color: var(--charcoal-text);
     margin: 0;
-    padding: 20px;
+    background: #f4f4f4;
 }
 
-header {
-    background: var(--berry-red);
+header, footer {
+    background: #2d5a27;
     color: white;
     text-align: center;
+    padding: 1rem;
+}
+
+main {
+    max-width: 600px;
+    margin: auto;
+    background: white;
     padding: 20px;
 }
 
 form {
-    max-width: 500px;
-    margin: auto;
-    background: var(--white);
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 4px 4px 0 var(--sand-tan);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+}
+
+label {
+    margin-top: 10px;
 }
 
 input, select, textarea {
     padding: 8px;
+    margin-top: 5px;
 }
 
 fieldset {
-    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    background: #2d5a27;
+    color: white;
+    border: none;
     padding: 10px;
-}
-
-.required {
-    color: var(--berry-red);
-}
-
-/* MEDIA QUERY (REQUIRED) */
-@media (min-width: 600px) {
-    form {
-        max-width: 700px;
-    }
+    cursor: pointer;
 }
