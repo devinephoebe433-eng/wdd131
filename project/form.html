@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Product Review Form</title>
-    <meta name="description" content="Submit your product review including rating, features, and feedback.">
+    <title>Lyric Review | Devine's Ethereal Lyricist</title>
+    <meta name="description" content="Submit your review of lyrics, songs, and musical experiences.">
     <meta name="author" content="Phoebe Devine">
 
     <link rel="stylesheet" href="styles/form.css">
@@ -14,21 +14,22 @@
 <body>
 
 <header>
-    <h1>Product Review Form</h1>
+    <h1>Devine's Ethereal Lyricist</h1>
+    <p>Lyric & Song Review Form</p>
 </header>
 
 <main>
 <form method="get" action="review.html">
 
-    <!-- Product -->
-    <label for="product">Product Name</label>
+    <!-- Song Selection -->
+    <label for="product">Select Song / Lyric</label>
     <select id="product" name="product" required>
-        <option value="" disabled selected>Select a Product ...</option>
+        <option value="" disabled selected>Select a Song ...</option>
     </select>
 
     <!-- Rating -->
     <fieldset>
-        <legend>Overall Rating</legend>
+        <legend>Emotional Impact Rating</legend>
 
         <input type="radio" id="star1" name="rating" value="1" required>
         <label for="star1">☆</label>
@@ -48,29 +49,29 @@
     </fieldset>
 
     <!-- Date -->
-    <label for="date">Date of Installation</label>
+    <label for="date">Date You First Heard It</label>
     <input type="date" id="date" name="date" required>
 
     <!-- Features -->
     <fieldset>
-        <legend>Useful Features</legend>
+        <legend>What stood out?</legend>
 
-        <input type="checkbox" id="durability" name="features" value="Durability">
-        <label for="durability">Durability</label>
+        <input type="checkbox" id="lyrics" name="features" value="Lyrics">
+        <label for="lyrics">Lyrics</label>
 
-        <input type="checkbox" id="ease" name="features" value="Ease of Use">
-        <label for="ease">Ease of Use</label>
+        <input type="checkbox" id="melody" name="features" value="Melody">
+        <label for="melody">Melody</label>
 
-        <input type="checkbox" id="performance" name="features" value="Performance">
-        <label for="performance">Performance</label>
+        <input type="checkbox" id="emotion" name="features" value="Emotion">
+        <label for="emotion">Emotion</label>
 
-        <input type="checkbox" id="design" name="features" value="Design">
-        <label for="design">Design</label>
+        <input type="checkbox" id="vocals" name="features" value="Vocals">
+        <label for="vocals">Vocals</label>
 
     </fieldset>
 
     <!-- Review -->
-    <label for="review">Written Review</label>
+    <label for="review">Your Reflection</label>
     <textarea id="review" name="review"></textarea>
 
     <!-- Name -->
@@ -84,7 +85,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2026 | WDD 131 | Phoebe Devine</p>
+    <p>&copy; 2026 | Devine's Ethereal Lyricist</p>
 </footer>
 
 </body>
