@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,82 +12,85 @@
     <link rel="stylesheet" href="styles/form.css">
     <script src="scripts/form.js" defer></script>
 </head>
+
 <body>
 
-<header>
-    <h1>Devine's Ethereal Lyricist</h1>
-    <p>Lyric & Song Review Form</p>
-</header>
+    <header>
+        <h1>Devine's Ethereal Lyricist</h1>
+        <p>Lyric & Song Review Form</p>
+    </header>
 
-<main>
-<form method="get" action="review.html">
+    <main>
+        <form method="get" action="review.html">
 
-    <!-- Song Selection -->
-    <label for="product">Select Song / Lyric</label>
-    <select id="product" name="product" required>
-        <option value="" disabled selected>Select a Song ...</option>
-    </select>
+            <!-- Song Selection -->
+            <label for="product">Select a Product</label>
 
-    <!-- Rating -->
-    <fieldset>
-        <legend>Emotional Impact Rating</legend>
+            <select id="product" name="product" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
 
-        <input type="radio" id="star1" name="rating" value="1" required>
-        <label for="star1">☆</label>
+            <!-- Rating -->
+            <fieldset>
+                <legend>Emotional Impact Rating</legend>
 
-        <input type="radio" id="star2" name="rating" value="2" required>
-        <label for="star2">☆☆</label>
+                <input type="radio" id="star1" name="rating" value="1" required>
+                <label for="star1">☆</label>
 
-        <input type="radio" id="star3" name="rating" value="3" required>
-        <label for="star3">☆☆☆</label>
+                <input type="radio" id="star2" name="rating" value="2" required>
+                <label for="star2">☆☆</label>
 
-        <input type="radio" id="star4" name="rating" value="4" required>
-        <label for="star4">☆☆☆☆</label>
+                <input type="radio" id="star3" name="rating" value="3" required>
+                <label for="star3">☆☆☆</label>
 
-        <input type="radio" id="star5" name="rating" value="5" required>
-        <label for="star5">☆☆☆☆☆</label>
+                <input type="radio" id="star4" name="rating" value="4" required>
+                <label for="star4">☆☆☆☆</label>
 
-    </fieldset>
+                <input type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5">☆☆☆☆☆</label>
 
-    <!-- Date -->
-    <label for="date">Date You First Heard It</label>
-    <input type="date" id="date" name="date" required>
+            </fieldset>
 
-    <!-- Features -->
-    <fieldset>
-        <legend>What stood out?</legend>
+            <!-- Date -->
+            <label for="date">Date You First Heard It</label>
+            <input type="date" id="date" name="date" required>
 
-        <input type="checkbox" id="lyrics" name="features" value="Lyrics">
-        <label for="lyrics">Lyrics</label>
+            <!-- Features -->
+            <fieldset>
+                <legend>What stood out?</legend>
 
-        <input type="checkbox" id="melody" name="features" value="Melody">
-        <label for="melody">Melody</label>
+                <input type="checkbox" id="lyrics" name="features" value="Lyrics">
+                <label for="lyrics">Lyrics</label>
 
-        <input type="checkbox" id="emotion" name="features" value="Emotion">
-        <label for="emotion">Emotion</label>
+                <input type="checkbox" id="melody" name="features" value="Melody">
+                <label for="melody">Melody</label>
 
-        <input type="checkbox" id="vocals" name="features" value="Vocals">
-        <label for="vocals">Vocals</label>
+                <input type="checkbox" id="emotion" name="features" value="Emotion">
+                <label for="emotion">Emotion</label>
 
-    </fieldset>
+                <input type="checkbox" id="vocals" name="features" value="Vocals">
+                <label for="vocals">Vocals</label>
 
-    <!-- Review -->
-    <label for="review">Your Reflection</label>
-    <textarea id="review" name="review"></textarea>
+            </fieldset>
 
-    <!-- Name -->
-    <label for="username">Your Name</label>
-    <input type="text" id="username" name="username">
+            <!-- Review -->
+            <label for="review">Your Reflection</label>
+            <textarea id="review" name="review"></textarea>
 
-    <!-- Submit -->
-    <input type="submit" value="Submit Review">
+            <!-- Name -->
+            <label for="username">Your Name</label>
+            <input type="text" id="username" name="username">
 
-</form>
-</main>
+            <!-- Submit -->
+            <input type="submit" value="Submit Review">
 
-<footer>
-    <p>&copy; 2026 | Devine's Ethereal Lyricist</p>
-</footer>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 | Devine's Ethereal Lyricist</p>
+    </footer>
 
 </body>
+
 </html>
