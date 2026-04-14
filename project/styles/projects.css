@@ -42,7 +42,7 @@ body {
   border-bottom: 2px solid white;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -54,10 +54,12 @@ body {
 .hero-text h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .hero-text p {
   font-size: 1.2rem;
+  text-align: center;
 }
 
 /* IMAGES */
@@ -80,10 +82,23 @@ body {
   transform: scale(1.05);
 }
 
-/* SECTION TITLE */
+/* SECTION */
 .section-title {
   text-align: center;
   margin-top: 2rem;
+}
+
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+section h2 {
+  color: #A63D56;
 }
 
 /* GRID */
@@ -100,20 +115,99 @@ body {
   padding: 1.5rem;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
-.card h3 {
-  margin-top: 0;
+.card:hover {
+  transform: translateY(-5px);
 }
 
+/* TEXT */
 .text {
   white-space: pre-line;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+}
+
+/* SONG STYLE */
+.card:has(.badge.song) .text {
+  background: rgba(79, 140, 255, 0.08);
+  border-left: 3px solid #4f8cff;
+  font-style: italic;
+}
+
+/* POEM STYLE */
+.card:has(.badge.poem) .text {
+  background: rgba(155, 92, 255, 0.08);
+  border-left: 3px solid #9b5cff;
 }
 
 /* AUDIO */
 audio {
   width: 100%;
   margin-top: 10px;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.badge.song {
+  background: #4f8cff;
+  color: white;
+}
+
+.badge.poem {
+  background: #9b5cff;
+  color: white;
+}
+
+/* READ MORE BUTTON */
+.read-more {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.read-more:hover {
+  transform: translateY(-2px);
+}
+
+/* FULL TEXT (IMPORTANT FIX) */
+.full-text {
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.07);
+  border-left: 4px solid #a29bfe;
+
+  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #333;
+
+  white-space: pre-line;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* HIDDEN STATE (CRITICAL FIX) */
+.hidden {
+  display: none !important;
 }
 
 /* FOOTER */
@@ -145,26 +239,7 @@ footer {
   }
 }
 
-/* badge */
-.badge {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.badge.song {
-  background: #4f8cff;
-  color: white;
-}
-
-.badge.poem {
-  background: #9b5cff;
-  color: white;
-}
-
-/* animations */
+/* ANIMATION */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -176,78 +251,7 @@ footer {
   }
 }
 
+/* STATUS MESSAGES */
 .success { color: #4ade80; }
 .error { color: #f87171; }
 .info { color: #60a5fa; }
-/* ================= CREATIVE TEXT STYLING ================= */
-
-/* Base poetic/lyrical text look */
-.text {
-  white-space: pre-line;
-  line-height: 1.8;
-  font-size: 0.95rem;
-  padding: 10px 12px;
-  border-left: 3px solid transparent;
-  transition: all 0.3s ease;
-}
-
-/* SONG LYRICS STYLE (emotional / vibrant) */
-.card:has(.badge.song) .text {
-  background: linear-gradient(135deg, rgba(79, 140, 255, 0.08), rgba(166, 61, 86, 0.05));
-  border-left: 3px solid #4f8cff;
-  color: #2b3a55;
-  font-style: italic;
-}
-
-/* POEM STYLE (soft / dreamy / artistic) */
-.card:has(.badge.poem) .text {
-  background: linear-gradient(135deg, rgba(155, 92, 255, 0.08), rgba(166, 61, 86, 0.05));
-  border-left: 3px solid #9b5cff;
-  color: #3b2f4a;
-  letter-spacing: 0.2px;
-}
-
-/* HOVER EFFECT FOR TEXT */
-.card:hover .text {
-  transform: translateX(3px);
-  transition: 0.3s ease;
-}
-
-/* OPTIONAL: MAKE LONG LYRICS MORE READABLE */
-.text::-webkit-scrollbar {
-  width: 6px;
-}
-
-.text::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2);
-  border-radius: 10px;
-}
-/* ================= SEO CONTENT STYLE ================= */
-
-section {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-section h2 {
-  color: #A63D56;
-  margin-bottom: 10px;
-}
-
-section p {
-  line-height: 1.8;
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* better hero spacing */
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 2.2rem;
-}

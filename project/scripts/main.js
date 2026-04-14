@@ -71,12 +71,17 @@ Baby, I'm right here`,
 // ================= DOM HELPERS =================
 const $ = (selector) => document.querySelector(selector);
 
+// ================= SAFE TEXT HANDLER =================
+// keeps SEO clean + avoids fake keyword inflation
+function safeText(text) {
+  return text.replace(/\n+/g, " ").trim();
+}
+
 // ================= CARD FACTORY =================
 function createCard(item, index) {
   const card = document.createElement("div");
   card.className = "card";
 
-  // animation delay for smooth entrance
   card.style.animation = `fadeIn 0.4s ease forwards`;
   card.style.animationDelay = `${index * 0.05}s`;
 
@@ -87,15 +92,56 @@ function createCard(item, index) {
   badge.className = `badge ${item.type.toLowerCase()}`;
   badge.textContent = item.type;
 
+  // ================= PREVIEW TEXT =================
   const text = document.createElement("p");
   text.className = "text";
-  text.textContent = item.content;
 
+  const cleaned = safeText(item.content);
+
+  text.textContent =
+    cleaned.length > 180
+      ? cleaned.slice(0, 180) + "..."
+      : cleaned;
+
+  // ================= FULL TEXT (SMOOTH READ MORE) =================
+  const full = document.createElement("div");
+  full.className = "full-text";
+  full.textContent = item.content;
+
+  // initial state (collapsed)
+  full.style.maxHeight = "0px";
+  full.style.opacity = "0";
+  full.style.overflow = "hidden";
+  full.style.transition = "max-height 0.5s ease, opacity 0.4s ease";
+
+  const btn = document.createElement("button");
+  btn.className = "read-more";
+  btn.textContent = "Read more";
+
+  let open = false;
+
+  btn.addEventListener("click", () => {
+    open = !open;
+
+    if (open) {
+      full.style.maxHeight = "500px";
+      full.style.opacity = "1";
+      btn.textContent = "Show less";
+    } else {
+      full.style.maxHeight = "0px";
+      full.style.opacity = "0";
+      btn.textContent = "Read more";
+    }
+  });
+
+  // assemble
   card.appendChild(title);
   card.appendChild(badge);
   card.appendChild(text);
+  card.appendChild(btn);
+  card.appendChild(full);
 
-  // 🎧 audio only for songs
+  // 🎧 AUDIO
   if (item.type === "Song" && item.audio) {
     const audio = document.createElement("audio");
     audio.controls = true;
@@ -128,9 +174,10 @@ function renderItems(selector, filter = "all") {
   });
 }
 
-// ================= FILTER SYSTEM (OPTIONAL UPGRADE) =================
+// ================= FILTER SYSTEM =================
 function setupFilters() {
   const buttons = document.querySelectorAll("[data-filter]");
+
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       const filter = btn.dataset.filter;
@@ -164,7 +211,7 @@ function handleForm(e) {
   output.textContent = `✨ Thank you, ${name}! Your message was sent successfully.`;
   output.className = "success";
 
-  $("#contactForm").reset();
+  $("#contactForm")?.reset();
 }
 
 // ================= LOCAL STORAGE =================
@@ -196,6 +243,7 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", init);
 
+// ================= ANIMATION =================
 function revealCards() {
   document.querySelectorAll(".card").forEach((card, i) => {
     card.style.opacity = 0;
@@ -209,6 +257,4 @@ function revealCards() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  revealCards();
-});
+document.addEventListener("DOMContentLoaded", revealCards);
