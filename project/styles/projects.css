@@ -1,0 +1,224 @@
+:root {
+  --bg: #F4EFE6;
+  --primary: #A63D56;
+  --dark: #222;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 1rem 2rem;
+}
+
+.logo {
+  color: white;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.active {
+  border-bottom: 2px solid white;
+}
+
+/* HERO SECTION */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+/* IMAGES */
+.hero-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.hero-images img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-images img:hover {
+  transform: scale(1.05);
+}
+
+/* SECTION TITLE */
+.section-title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+/* CARD */
+.card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.text {
+  white-space: pre-line;
+}
+
+/* AUDIO */
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+  margin-top: 2rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-images {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-images img {
+    height: 200px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* badge */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.badge.song {
+  background: #4f8cff;
+  color: white;
+}
+
+.badge.poem {
+  background: #9b5cff;
+  color: white;
+}
+
+/* animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success { color: #4ade80; }
+.error { color: #f87171; }
+.info { color: #60a5fa; }
+/* ================= CREATIVE TEXT STYLING ================= */
+
+/* Base poetic/lyrical text look */
+.text {
+  white-space: pre-line;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* SONG LYRICS STYLE (emotional / vibrant) */
+.card:has(.badge.song) .text {
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.08), rgba(166, 61, 86, 0.05));
+  border-left: 3px solid #4f8cff;
+  color: #2b3a55;
+  font-style: italic;
+}
+
+/* POEM STYLE (soft / dreamy / artistic) */
+.card:has(.badge.poem) .text {
+  background: linear-gradient(135deg, rgba(155, 92, 255, 0.08), rgba(166, 61, 86, 0.05));
+  border-left: 3px solid #9b5cff;
+  color: #3b2f4a;
+  letter-spacing: 0.2px;
+}
+
+/* HOVER EFFECT FOR TEXT */
+.card:hover .text {
+  transform: translateX(3px);
+  transition: 0.3s ease;
+}
+
+/* OPTIONAL: MAKE LONG LYRICS MORE READABLE */
+.text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.text::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}

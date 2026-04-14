@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Devine's Ethereal Lyricist </title>
+  <meta name="description" content="Connect with Devine — collaborations, music, poetry, and creative expression.">
+
+  <!-- Google Font (optional but gives it a premium feel) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/projects.css">
+  <script defer src="scripts/main.js"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <nav class="navbar">
+    <h2 class="logo">Ethereal</h2>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="music.html">Music & Poems</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero contact-hero">
+    <div class="hero-content">
+      <h1>Let’s Create Something Beautiful</h1>
+      <p>Whether it's music, poetry, or inspiration — your message matters ✨</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-container">
+
+    <!-- LEFT SIDE (INFO) -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>
+        I'm always open to collaborations, creative ideas, and meaningful conversations.
+        Feel free to reach out — let’s bring something ethereal to life.
+      </p>
+
+      <div class="contact-details">
+        <p><strong>Email:</strong> devine@example.com</p>
+        <p><strong>Focus:</strong> Music • Poetry • Storytelling</p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE (FORM) -->
+    <div class="contact-form">
+      <form id="contactForm">
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="messageInput">Your Message</label>
+          <textarea id="messageInput" name="message" rows="5" placeholder="Write your thoughts here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          ✨ Send Message
+        </button>
+
+      </form>
+
+      <!-- FEEDBACK MESSAGE -->
+      <p id="message" class="form-feedback"></p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p>&copy; 2026 Devine | Ethereal Lyricist</p>
+</footer>
+
+</body>
+</html>
